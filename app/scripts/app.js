@@ -22,6 +22,11 @@ angular
         templateUrl: 'scripts/candidate/candidate.html',
         controller: 'CandidateCtrl'
       })
+      .state('showCandidate', {
+        url: '/candidate/:candidateId',
+        templateUrl: 'scripts/candidate/view-edit-candidate.html',
+        controller: 'ViewEditCandidateCtrl'
+      })
       .state('test', {
         url: '/test',
         templateUrl: 'scripts/test/test.html',
