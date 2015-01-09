@@ -13,7 +13,7 @@
     	Add Test</button></div>
   </div>
   <div class="test row cursor" ng-repeat="test in tests">
-    <a data-ui-sref="newTest({testId: $index})">
+    <a data-ui-sref="showTest({testId: $index})">
       <div class="col-md-2"><b>{{ test.skills }}</b></div>
       <div class="col-md-3">{{ test.name }}</div>
       <div class="col-md-2">{{ test.creator }}</div>

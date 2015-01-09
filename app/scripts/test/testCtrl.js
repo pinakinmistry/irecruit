@@ -16,11 +16,11 @@
 		  function addTest() {
 		  	Test.add($scope.test);
 		  	$scope.test = {skills: '', name: '', creator: '', type: ''};
-		  	$state.go('newTest', { testId: $scope.tests.length - 1 });
+		  	$state.go('showTest', { testId: $scope.tests.length - 1 });
 		  }
 
 		})
-		.controller('NewTestCtrl', function ($scope, $state, $stateParams, Test, QUESTION_TYPES) {
+		.controller('ViewEditTestCtrl', function ($scope, $state, $stateParams, Test, QUESTION_TYPES) {
 		  $scope.test = Test.all[$stateParams.testId];
 		  $scope.questionTypes = QUESTION_TYPES;
 		  $scope.test.questions = $scope.test.questions || [];

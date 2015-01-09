@@ -27,10 +27,10 @@ angular
         templateUrl: 'scripts/test/test.html',
         controller: 'TestCtrl'
       })
-      .state('newTest', {
+      .state('showTest', {
         url: '/test/:testId',
-        templateUrl: 'scripts/test/newtest.html',
-        controller: 'NewTestCtrl'
+        templateUrl: 'scripts/test/view-edit-test.html',
+        controller: 'ViewEditTestCtrl'
       });
       
   })
