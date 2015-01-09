@@ -12,9 +12,9 @@ angular
   .module('irecruitApp', [
     'ui.router',
     'irecruit.candidate.controllers',
-    'irecruit.test.controllers'
+    'irecruit.test.controllers',
+    'irecruit.commons.directives'
   ])
-  .constant('SKILLS', ['Front end', 'Java', 'Scala'])
   .config(function ($stateProvider) {
     $stateProvider
       .state('candidate', {
@@ -36,4 +36,6 @@ angular
   })
   .run(function ($state) {
     $state.go('candidate');
-  });
+  })
+  .constant('SKILLS', ['Front end', 'Java', 'Scala'])
+  .constant('QUESTION_TYPES', ['Single Answer', 'Multiple Answer', 'Textual', 'Exercise']);

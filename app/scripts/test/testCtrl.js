@@ -20,8 +20,30 @@
 		  }
 
 		})
-		.controller('NewTestCtrl', function ($scope, $state, $stateParams, Test, SKILLS) {
+		.controller('NewTestCtrl', function ($scope, $state, $stateParams, Test, QUESTION_TYPES) {
 		  $scope.test = Test.all[$stateParams.testId];
+		  $scope.questionTypes = QUESTION_TYPES;
+		  $scope.test.questions = [];
+		  $scope.question = { options: [] };
+		  $scope.option = { text: ''};
+		  $scope.addOption = addOption;
+		  $scope.deleteOption = deleteOption;
+		  $scope.addQuestion = addQuestion;
+
+		  function addOption() {
+		  	$scope.question.options.push({text: $scope.option.text});
+		  	$scope.option.text = '';
+		  	$scope.$broadcast('newOptionAdded');
+		  }
+
+		  function deleteOption(index) {
+		  	$scope.question.options.splice(index, 1);
+		  }
+
+		  function addQuestion() {
+		  	$scope.test.questions.push($scope.question);
+		  	$scope.question = { options: [] };
+		  }
 
 		});
 
