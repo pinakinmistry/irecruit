@@ -4,8 +4,11 @@
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="candidate.phone" placeholder="Phone"/></div>
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="candidate.email" placeholder="Email"/></div>
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="candidate.skypeId" placeholder="Skype Id"/></div>
-    <div class="col-md-2"><select class="col-sm-12 input-sm" data-ng-model="candidate.skills" data-ng-options="skill for skill in skills">
-    	</select></div>
+    <div class="col-md-2">
+    	<select class="col-sm-12 input-sm" data-ng-model="candidate.skills" data-ng-options="skill for skill in skills">
+    		<option value=''>-- Select skill set --</option>
+    	</select>
+    </div>
     <div class="col-md-2"><button type="button" class="btn btn-primary btn-xs" data-ng-click="addCandidate()">
     	Add Candidate</button></div>
   </div>

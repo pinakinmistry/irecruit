@@ -1,7 +1,10 @@
 <div>
 	<div class="row">
-    <div class="col-md-2"><select class="col-md-12 input-sm" data-ng-model="test.skills" data-ng-options="skill for skill in skills">
-      </select></div>
+    <div class="col-md-2">
+      <select class="col-md-12 input-sm" data-ng-model="test.skills" data-ng-options="skill for skill in skills">
+        <option value=''>-- Select skill --</option>
+      </select>
+    </div>
     <div class="col-md-3"><input type="text" class="input-sm col-sm-12" data-ng-model="test.name" placeholder="Name"/></div>
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="test.creator" placeholder="Creator"/></div>
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="test.type" placeholder="Type"/>
