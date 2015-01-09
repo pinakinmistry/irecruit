@@ -23,7 +23,7 @@
 		.controller('NewTestCtrl', function ($scope, $state, $stateParams, Test, QUESTION_TYPES) {
 		  $scope.test = Test.all[$stateParams.testId];
 		  $scope.questionTypes = QUESTION_TYPES;
-		  $scope.test.questions = [];
+		  $scope.test.questions = $scope.test.questions || [];
 		  $scope.question = { options: [] };
 		  $scope.option = { text: ''};
 		  $scope.addOption = addOption;
@@ -43,6 +43,7 @@
 		  function addQuestion() {
 		  	$scope.test.questions.push($scope.question);
 		  	$scope.question = { options: [] };
+		  	Test.all[$stateParams.testId] = $scope.test;
 		  }
 
 		});
