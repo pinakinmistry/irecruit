@@ -10,24 +10,18 @@
  */
 angular
   .module('irecruitApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+    'ui.router',
+    'irecruit.candidate.controllers'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+  .config(function ($stateProvider) {
+    $stateProvider
+      .state('candidate', {
+        url: '/candidate',
+        templateUrl: 'scripts/candidate/candidate.html',
+        controller: 'CandidateCtrl'
       });
+      
+  })
+  .run(function ($state) {
+    $state.go('candidate');
   });
