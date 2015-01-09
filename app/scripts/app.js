@@ -26,6 +26,11 @@ angular
         url: '/test',
         templateUrl: 'scripts/test/test.html',
         controller: 'TestCtrl'
+      })
+      .state('newTest', {
+        url: '/test/:testId',
+        templateUrl: 'scripts/test/newtest.html',
+        controller: 'NewTestCtrl'
       });
       
   })

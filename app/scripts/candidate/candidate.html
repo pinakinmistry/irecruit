@@ -1,5 +1,5 @@
 <div>
-	<div class="candidate row">
+	<div class="row">
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="candidate.name" placeholder="Name"/></div>
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="candidate.phone" placeholder="Phone"/></div>
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="candidate.email" placeholder="Email"/></div>
@@ -9,7 +9,7 @@
     <div class="col-md-2"><button type="button" class="btn btn-primary btn-xs" data-ng-click="addCandidate()">
     	Add Candidate</button></div>
   </div>
-  <div class="candidate row" ng-repeat="candidate in candidates">
+  <div class="row" ng-repeat="candidate in candidates">
     <div class="col-md-2"><b>{{ candidate.name }}</b></div>
     <div class="col-md-2">{{ candidate.phone }}</div>
     <div class="col-md-2">{{ candidate.email }}</div>

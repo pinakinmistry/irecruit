@@ -1,18 +1,20 @@
 <div>
-	<div class="candidate row">
+	<div class="row">
     <div class="col-md-2"><select class="col-md-12 input-sm" data-ng-model="test.skills" data-ng-options="skill for skill in skills">
       </select></div>
     <div class="col-md-3"><input type="text" class="input-sm col-sm-12" data-ng-model="test.name" placeholder="Name"/></div>
     <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="test.creator" placeholder="Creator"/></div>
-    <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="test.duration" placeholder="Duration (mins)"/>
+    <div class="col-md-2"><input type="text" class="input-sm" data-ng-model="test.type" placeholder="Type"/>
     </div>
     <div class="col-md-2"><button type="button" class="btn btn-primary btn-xs" data-ng-click="addTest()">
     	Add Test</button></div>
   </div>
-  <div class="test row" ng-repeat="test in tests">
-    <div class="col-md-2"><b>{{ test.skills }}</b></div>
-    <div class="col-md-3">{{ test.name }}</div>
-    <div class="col-md-2">{{ test.creator }}</div>
-    <div class="col-md-2">{{ test.duration }}</div>
+  <div class="test row cursor" ng-repeat="test in tests">
+    <a data-ui-sref="newTest({testId: $index})">
+      <div class="col-md-2"><b>{{ test.skills }}</b></div>
+      <div class="col-md-3">{{ test.name }}</div>
+      <div class="col-md-2">{{ test.creator }}</div>
+      <div class="col-md-2">{{ test.type }}</div>
+    </a>
   </div>
 </div>

@@ -5,8 +5,8 @@ angular.module('news.test.services', [
 	.factory('Test', function () {
 	  
 	  var tests = [
-	  	{ skills: 'Front end', name: 'HTML, CSS, JavaScript v1', creator: 'Ashish Juyal', duration: 60 },
-	  	{ skills: 'Front end', name: 'HTML, CSS, JavaScript v2', creator: 'Abhinav Kumar', duration: 30 }
+	  	{ skills: 'Front end', name: 'HTML, CSS, JavaScript v1', creator: 'Ashish Juyal', type: 'Initial screening' },
+	  	{ skills: 'Front end', name: 'HTML, CSS, JavaScript v2', creator: 'Abhinav Kumar', type: 'Tech round' }
 	  ];
 	  var Test = {
 	    all: tests,
