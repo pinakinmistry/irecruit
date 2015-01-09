@@ -13,6 +13,7 @@ angular
     'ui.router',
     'irecruit.candidate.controllers'
   ])
+  .constant('SKILLS', ['Front end', 'Java'])
   .config(function ($stateProvider) {
     $stateProvider
       .state('candidate', {
