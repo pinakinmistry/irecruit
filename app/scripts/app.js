@@ -43,11 +43,11 @@ angular
         controller: 'EnterTestCtrl'
       })
       .state('enterTest.confirmCandidate', {
-        url: '/confirmCandidate',
+        url: '/confirmcandidate',
         templateUrl: 'scripts/test/confirm-candidate.html'
       })
       .state('enterTest.beginTest', {
-        url: '/beginTest',
+        url: '/begintest',
         templateUrl: 'scripts/test/begin-test.html'
       });
       
@@ -56,4 +56,4 @@ angular
     $state.go('candidate');
   })
   .constant('SKILLS', ['Front end', 'Java', 'Scala'])
-  .constant('QUESTION_TYPES', ['Single Answer', 'Multiple Answer', 'Textual', 'Exercise']);
+  .constant('QUESTION_TYPES', ['Single Answer', 'Multiple Answers', 'Textual', 'Exercise']);

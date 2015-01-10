@@ -47,9 +47,10 @@
 		  }
 
 		})
-		.controller('EnterTestCtrl', function ($scope, Candidate, $state, $stateParams) {
+		.controller('EnterTestCtrl', function ($scope, Candidate, $state, $stateParams, $rootScope) {
 			$scope.enterTest = enterTest;
 			$scope.beginTest = beginTest;
+			$rootScope.testEntered = true;
 
 			function enterTest() {
 				angular.forEach(Candidate.all, function(candidate) {
@@ -64,7 +65,8 @@
 
 			function beginTest() {
 				$scope.testStarted = true;
-				$state.go('enterTest.beginTest');	
+				$scope.test = $scope.appearingCandidate.test;
+				$state.go('enterTest.beginTest');
 			}
 
 
