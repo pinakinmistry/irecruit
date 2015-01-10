@@ -52,8 +52,8 @@ body {
 }
 
 .jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+  font-size: 14px;
+  //padding: 14px 24px;
 }
 
 /* Supporting marketing content */
@@ -196,4 +196,12 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
 }

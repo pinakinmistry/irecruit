@@ -54,7 +54,6 @@
 
 			function enterTest() {
 				angular.forEach(Candidate.all, function(candidate) {
-					console.log(candidate.testkey, $scope.test.key)
 					if(candidate.testkey === $scope.test.key) {
 						$scope.appearingCandidate = candidate;
 					}
