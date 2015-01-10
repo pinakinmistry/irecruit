@@ -1,7 +1,7 @@
 <div class="well well-box">
 	<div class="jumbotron">
 	  <div data-if="test.questions[currentQuestion].type === 'concept'">
-		  <div ng-bind="test.questions[currentQuestion].name"></div>
+		  <div ng-bind="test.questions[currentQuestion].text"></div>
 		  <div ng-if="test.questions[currentQuestion].options">
 		  	<ul>
 		  		<li ng-repeat="option in test.questions[currentQuestion].options">

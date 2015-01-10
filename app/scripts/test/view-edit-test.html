@@ -21,7 +21,7 @@
   <!-- Question template -->
   <div class="row">
 		<div class="col-md-6">
-			<textarea class="input-sm col-sm-12" data-ng-model="question.name" placeholder="Type question ..."></textarea>
+			<textarea class="input-sm col-sm-12" data-ng-model="question.text" placeholder="Type question ..."></textarea>
 		</div>
 		<div class="col-md-2">
 			<select class="col-md-12 input-sm" data-ng-model="question.type"
@@ -56,7 +56,7 @@
   <!-- Question added to the test -->
   <div class="row" data-ng-repeat="question in test.questions">
 		<div class="col-md-6">
-			<span class="col-sm-12" data-ng-bind="question.name"></span>
+			<span class="col-sm-12" data-ng-bind="question.text"></span>
 		</div>
 		<div class="col-md-2">
 			<span class="col-md-12" data-ng-bind="question.type"></span>
