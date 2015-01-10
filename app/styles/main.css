@@ -134,3 +134,13 @@ body {
 .cursor {
   cursor: pointer;
 }
+
+.enter-test {
+  position: relative;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.font20 {
+  font-size: 20px;
+}

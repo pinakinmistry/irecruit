@@ -1,0 +1,41 @@
+<div>
+	<div class="row heading">
+		<span class="col-md-2">candidate name</span>
+		<span class="col-md-2">phone</span>
+    <span class="col-md-2">email</span>
+		<span class="col-md-2">skype id</span>
+		<span class="col-md-2">skill set</span>
+  </div>
+	<div class="row">
+		<span class="col-md-2" data-ng-bind="candidate.name"></span>
+		<span class="col-md-2" data-ng-bind="candidate.phone"></span>
+    <span class="col-md-2" data-ng-bind="candidate.email"></span>
+    <span class="col-md-2" data-ng-bind="candidate.skypeId"></span>
+    <span class="col-md-2" data-ng-bind="candidate.skills"></span>
+  </div>
+  <br>
+  <div class="row heading">
+		<span class="col-md-4">assign test</span>
+		<span class="col-md-2">set interviewer</span>
+		<span class="col-md-2">set test key</span>
+  </div>
+  <div class="row">
+  	<div class="col-md-4">
+			<select class="col-md-12 input-sm" data-ng-model="candidate.test"
+				data-ng-options="test.name for test in tests">
+				<option value=''>-- Select test --</option>
+	    </select>
+  	</div>
+  	<div class="col-md-2">
+			<select class="col-md-12 input-sm" data-ng-model="candidate.interviewer"
+				data-ng-options="test.creator for test in tests">
+				<option value=''>-- Interviewer --</option>
+	    </select>
+  	</div>
+  	<div class="col-md-2">
+    	<input type="text" class="input-sm" data-ng-model="candidate.testkey" placeholder="-- test key --" />
+    </div>
+  </div>
+
+  
+</div>

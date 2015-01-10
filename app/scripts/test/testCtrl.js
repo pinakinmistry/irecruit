@@ -46,6 +46,29 @@
 		  	Test.all[$stateParams.testId] = $scope.test;
 		  }
 
+		})
+		.controller('EnterTestCtrl', function ($scope, Candidate, $state, $stateParams) {
+			$scope.enterTest = enterTest;
+			$scope.beginTest = beginTest;
+
+			function enterTest() {
+				angular.forEach(Candidate.all, function(candidate) {
+					console.log(candidate.testkey, $scope.test.key)
+					if(candidate.testkey === $scope.test.key) {
+						$scope.appearingCandidate = candidate;
+					}
+				});
+				$state.go('enterTest.confirmCandidate');
+			}
+			console.log($scope.appearingCandidate);
+
+			function beginTest() {
+				$scope.testStarted = true;
+				$state.go('enterTest.beginTest');	
+			}
+
+
+
 		});
 
 })();

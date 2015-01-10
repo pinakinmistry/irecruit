@@ -36,6 +36,19 @@ angular
         url: '/test/:testId',
         templateUrl: 'scripts/test/view-edit-test.html',
         controller: 'ViewEditTestCtrl'
+      })
+      .state('enterTest', {
+        url: '/entertest',
+        templateUrl: 'scripts/test/enter-test.html',
+        controller: 'EnterTestCtrl'
+      })
+      .state('enterTest.confirmCandidate', {
+        url: '/confirmCandidate',
+        templateUrl: 'scripts/test/confirm-candidate.html'
+      })
+      .state('enterTest.beginTest', {
+        url: '/beginTest',
+        templateUrl: 'scripts/test/begin-test.html'
       });
       
   })
