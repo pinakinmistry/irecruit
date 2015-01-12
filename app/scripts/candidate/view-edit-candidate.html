@@ -51,7 +51,9 @@
   	<div class="col-md-2">
     	{{test.testkey}}
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
+    	{{test.status}}
+    	<button ng-if="test.status" class="btn btn-primary btn-xs">Evaluate</button>
     </div>
   </div>
 

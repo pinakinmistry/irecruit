@@ -54,32 +54,22 @@
 			$scope.submitAnswers = submitAnswers;
 
 			function enterTest() {
-				angular.forEach(Candidate.all, function(candidate) {
-					console.log(candidate.testskeys, $scope.test.testkey); 
-					if(candidate.testskeys.indexOf($scope.test.testkey) > -1) {
-						$scope.appearingCandidate = candidate;
-					}
+				$scope.appearingCandidate = _.find(Candidate.all, function(candidate) {
+					return _.contains(candidate.testskeys, $scope.testkey);
 				});
 				$state.go('enterTest.confirmCandidate');
 			}
-			console.log($scope.appearingCandidate);
 
 			function beginTest() {
 				$scope.testStarted = true;
 				$scope.test = _.find($scope.appearingCandidate.testsAssigned, function(test){
-					return test.testkey === $scope.test.testkey;
+					return test.testkey === $scope.testkey;
 				});
 				$state.go('enterTest.beginTest');
 			}
 
 			function submitAnswers() {
-				console.log('answers submitted');
-				angular.forEach(Candidate.all, function(candidate) {
-					console.log(candidate.testkey, $scope.appearingCandidate.name);
-					if(candidate.name === $scope.appearingCandidate.name) {
-						candidate.status = "Answers submitted";
-					}
-				});
+				$scope.test.status = 'Answers submitted';
 				$state.go('candidate');
 			}
 
