@@ -55,7 +55,8 @@
 
 			function enterTest() {
 				angular.forEach(Candidate.all, function(candidate) {
-					if(candidate.testkey === $scope.test.key) {
+					console.log(candidate.testskeys, $scope.test.testkey); 
+					if(candidate.testskeys.indexOf($scope.test.testkey) > -1) {
 						$scope.appearingCandidate = candidate;
 					}
 				});
@@ -65,7 +66,9 @@
 
 			function beginTest() {
 				$scope.testStarted = true;
-				$scope.test = $scope.appearingCandidate.test;
+				$scope.test = _.find($scope.appearingCandidate.testsAssigned, function(test){
+					return test.testkey === $scope.test.testkey;
+				});
 				$state.go('enterTest.beginTest');
 			}
 

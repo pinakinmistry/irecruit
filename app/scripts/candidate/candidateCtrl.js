@@ -23,11 +23,17 @@
 		.controller('ViewEditCandidateCtrl', function ($scope, $state, $stateParams, Candidate, SKILLS, Test) {
 		  $scope.candidate = Candidate.all[$stateParams.candidateId];
 		  $scope.tests = Test.all;
+		  $scope.testAssigned = {};
 		  $scope.assignTest = assignTest;
 
 		  function assignTest() {
-		  	$scope.candidate.status = 'Test assigned';
-		  	$state.go('candidate');
+		  	$scope.candidate.testsAssigned.push($scope.testAssigned);
+		  	$scope.candidate.testskeys.push($scope.testAssigned.testkey);
+		  	var numberOfTests = $scope.candidate.testsAssigned.length;
+		  	$scope.candidate.status = numberOfTests + ' test' + (numberOfTests > 1 ? 's' : '') + ' assigned';
+		  	$scope.testAssigned = {};
+		  	console.log($scope.candidate);
+		  	//$state.go('candidate');
 		  }
 		});
 

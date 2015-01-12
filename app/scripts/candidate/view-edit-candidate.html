@@ -23,22 +23,35 @@
   </div>
   <div class="row">
   	<div class="col-md-4">
-			<select class="col-md-12 input-sm" data-ng-model="candidate.test"
+			<select class="col-md-12 input-sm" data-ng-model="testAssigned"
 				data-ng-options="test.name for test in tests">
 				<option value=''>-- Select test --</option>
 	    </select>
   	</div>
   	<div class="col-md-2">
-			<select class="col-md-12 input-sm" data-ng-model="candidate.interviewer"
-				data-ng-options="test.creator for test in tests">
+			<select class="col-md-12 input-sm" data-ng-model="testAssigned.interviewer"
+				data-ng-options="test.creator as test.creator for test in tests">
 				<option value=''>-- Interviewer --</option>
 	    </select>
   	</div>
   	<div class="col-md-2">
-    	<input type="text" class="input-sm" data-ng-model="candidate.testkey" placeholder="-- test key --" />
+    	<input type="text" class="input-sm" data-ng-model="testAssigned.testkey" placeholder="-- test key --" />
     </div>
     <div class="col-md-2">
     	<button class="btn btn-primary btn-sm" data-ng-click="assignTest()">Assign test</button>
+    </div>
+  </div>
+  <div class="row" data-ng-repeat="test in candidate.testsAssigned">
+  	<div class="col-md-4">
+			{{test.name}}
+  	</div>
+  	<div class="col-md-2">
+			{{test.interviewer}}
+  	</div>
+  	<div class="col-md-2">
+    	{{test.testkey}}
+    </div>
+    <div class="col-md-2">
     </div>
   </div>
 
