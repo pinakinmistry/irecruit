@@ -41,6 +41,9 @@
 		ng-disabled="currentQuestion === 0"
 		ng-class="{ 'btn-primary': currentQuestion === test.questions.length - 1 }"
 		ng-click="prevQuestion()">Prev</button>
+	<button class="btn btn-danger btn-submit"
+		ng-show="currentQuestion === test.questions.length - 1"
+		ng-click="submitAnswers()">Submit answers</button>
 	<button class="btn btn-primary btn-next"
 		ng-disabled="currentQuestion === test.questions.length - 1"
 		ng-click="nextQuestion()">Next</button>

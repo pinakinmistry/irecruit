@@ -152,13 +152,17 @@ body {
   min-height: 500px;
 }
 
-.btn-prev, .btn-next {
+.btn-prev, .btn-next, .btn-submit {
   position: absolute;
   bottom: 20px;
 }
 
 .btn-next {
   right: 20px;
+}
+
+.btn-submit {
+  left: 400px;
 }
 
 /* Main marketing message and sign up button */

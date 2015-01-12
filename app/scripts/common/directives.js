@@ -16,7 +16,8 @@
       templateUrl: 'scripts/test/test-runner.html',
       restrict: 'E',
       scope: {
-      	test: "="
+      	test: "=",
+      	submitAnswers: "&"
       },
       link: function postLink(scope, element, attrs) {
       	scope.currentQuestion = 0;

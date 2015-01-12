@@ -51,6 +51,7 @@
 			$scope.enterTest = enterTest;
 			$scope.beginTest = beginTest;
 			$rootScope.testEntered = true;
+			$scope.submitAnswers = submitAnswers;
 
 			function enterTest() {
 				angular.forEach(Candidate.all, function(candidate) {
@@ -68,6 +69,16 @@
 				$state.go('enterTest.beginTest');
 			}
 
+			function submitAnswers() {
+				console.log('answers submitted');
+				angular.forEach(Candidate.all, function(candidate) {
+					console.log(candidate.testkey, $scope.appearingCandidate.name);
+					if(candidate.name === $scope.appearingCandidate.name) {
+						candidate.status = "Answers submitted";
+					}
+				});
+				$state.go('candidate');
+			}
 
 
 		});
