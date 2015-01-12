@@ -24,6 +24,8 @@
       	scope.nextQuestion = nextQuestion;
       	scope.prevQuestion = prevQuestion;
         scope.runCode = runCode;
+        scope.answerEvaluatedAs = answerEvaluatedAs;
+        scope.evaluationDone = evaluationDone;
 
       	function nextQuestion() {
       		if(scope.currentQuestion < scope.test.questions.length - 1){
@@ -41,6 +43,16 @@
           var code = $sce.trustAsJs(scope.test.questions[scope.currentQuestion].content);
           scope.codeOutput = eval('(' + code + ')');
         }
+
+        function answerEvaluatedAs(evaluatedAs) {
+        	scope.test.questions[scope.currentQuestion].evaluated = evaluatedAs;
+        };
+
+        function evaluationDone() {
+        	scope.test.status = 'Evaluated';
+        	scope.test.evaluated = true;
+        }
+
 
       }
     };

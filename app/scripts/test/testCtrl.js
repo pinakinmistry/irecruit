@@ -82,8 +82,6 @@
 			});
 			$scope.test = $scope.candidate.testsAssigned[$stateParams.testId];
 			$scope.test.evaluation = true;
-			console.log($scope.test);
-			console.log($scope.candidate);
 
 		});
 

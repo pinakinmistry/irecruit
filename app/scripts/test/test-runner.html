@@ -38,6 +38,12 @@
 			</div>
 		</div>
 	</div>
+	<div data-ng-show="test.questions[currentQuestion].evaluated">
+		<label>Evaluated as: </label>
+		<span class="glyphicon glyphicon-ok" data-ng-show="test.questions[currentQuestion].evaluated === 'correct'"></span>
+		<span class="glyphicon glyphicon-remove" data-ng-show="test.questions[currentQuestion].evaluated === 'incorrect'">
+		</span>
+	</div>
 	
 	<button class="btn btn-prev"
 		ng-disabled="currentQuestion === 0"
@@ -47,8 +53,16 @@
 		ng-show="currentQuestion === test.questions.length - 1"
 		ng-click="submitAnswers()">Submit answers</button>
 	<div class="evaluation-buttons" ng-if="test.evaluation">
-		<button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
-		<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+		<button class="btn btn-default" data-ng-click="answerEvaluatedAs('correct')">
+			<span class="glyphicon glyphicon-ok" ></span>
+		</button>
+		<button class="btn btn-danger" data-ng-click="answerEvaluatedAs('incorrect')">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+		<button class="btn btn-primart" data-ng-show="currentQuestion === test.questions.length - 1"
+			data-ng-click="evaluationDone()">
+			Done
+		</button>
 	</div>
 	<button class="btn btn-primary btn-next"
 		ng-disabled="currentQuestion === test.questions.length - 1"

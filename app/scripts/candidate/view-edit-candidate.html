@@ -51,10 +51,15 @@
   	<div class="col-md-2">
     	{{test.testkey}}
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
     	{{test.status}}
-    	<button ng-if="test.status" class="btn btn-primary btn-xs"
-    		data-ng-click="evaluateTest($index)">Evaluate</button>
+    </div>
+    <div class="col-md-2">
+    	<button ng-if="test.status == 'Answers submitted'" class="btn btn-primary btn-xs"
+    		data-ng-click="evaluateTest($index)">
+    		Evaluate
+    	</button>
+    	<a ng-if="test.evaluated" data-ng-click="evaluateTest($index)">Scored: {{test.score}}</a>
     </div>
   </div>
 
