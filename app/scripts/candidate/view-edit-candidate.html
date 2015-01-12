@@ -5,6 +5,7 @@
     <span class="col-md-2">email</span>
 		<span class="col-md-2">skype id</span>
 		<span class="col-md-2">skill set</span>
+		<span class="col-md-2">status</span>
   </div>
 	<div class="row">
 		<span class="col-md-2" data-ng-bind="candidate.name"></span>
@@ -12,6 +13,7 @@
     <span class="col-md-2" data-ng-bind="candidate.email"></span>
     <span class="col-md-2" data-ng-bind="candidate.skypeId"></span>
     <span class="col-md-2" data-ng-bind="candidate.skills"></span>
+    <span class="col-md-2" data-ng-bind="candidate.status"></span>
   </div>
   <br>
   <div class="row heading">
@@ -34,6 +36,9 @@
   	</div>
   	<div class="col-md-2">
     	<input type="text" class="input-sm" data-ng-model="candidate.testkey" placeholder="-- test key --" />
+    </div>
+    <div class="col-md-2">
+    	<button class="btn btn-primary btn-sm" data-ng-click="assignTest()">Assign test</button>
     </div>
   </div>
 

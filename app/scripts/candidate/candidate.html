@@ -9,7 +9,7 @@
     		<option value=''>-- Select skill set --</option>
     	</select>
     </div>
-    <div class="col-md-2"><button type="button" class="btn btn-primary btn-xs" data-ng-click="addCandidate()">
+    <div class="col-md-2"><button type="button" class="btn btn-primary btn-sm" data-ng-click="addCandidate()">
     	Add Candidate</button></div>
   </div>
   <div class="row" ng-repeat="candidate in candidates">
@@ -19,6 +19,7 @@
 	    <div class="col-md-2">{{ candidate.email }}</div>
 	    <div class="col-md-2">{{ candidate.skypeId }}</div>
 	    <div class="col-md-2"><b>{{ candidate.skills }}</b></div>
+      <div class="col-md-2"><b>{{ candidate.status }}</b></div>
 	  </a>
   </div>
 </div>
