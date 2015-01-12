@@ -20,9 +20,27 @@ angular.module('news.test.services', [
 		  	  	type: 'Multiple Answers',
 		  	  	text: 'Q2',
 		  	  	options: [
-		  	  		{text: 'o1'},
-		  	  		{text: 'o2'},
-		  	  		{text: 'o3'}
+		  	  		{text: 'a1'},
+		  	  		{text: 'b2'},
+		  	  		{text: 'c3'}
+		  	  	]
+		  	  },
+		  	  {
+		  	  	type: 'Single Answer',
+		  	  	text: 'Q3',
+		  	  	options: [
+		  	  		{text: 'x1'},
+		  	  		{text: 'x2'},
+		  	  		{text: 'x3'}
+		  	  	]
+		  	  },
+		  	  {
+		  	  	type: 'Multiple Answers',
+		  	  	text: 'Q4',
+		  	  	options: [
+		  	  		{text: 'y1'},
+		  	  		{text: 'y2'},
+		  	  		{text: 'y3'}
 		  	  	]
 		  	  },
 		  	  {

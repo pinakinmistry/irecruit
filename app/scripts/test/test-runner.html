@@ -6,14 +6,16 @@
 		  	<ul>
 		  		<li ng-repeat="option in test.questions[currentQuestion].options">
 		  			<label ng-if="test.questions[currentQuestion].type === 'Single Answer'">
-		  				<input type="radio" name="radio-primary" ng-model="test.questions[currentQuestion].answer"
+		  				<input type="radio"
+		  					name="question_{{currentQuestion}}"
+		  					ng-model="test.questions[currentQuestion].answer"
+		  					ng-value="option.text"
 		  				 /> {{option.text}}
 		  			</label>
 		  			<label ng-if="test.questions[currentQuestion].type === 'Multiple Answers'">
 		  				<input type="checkbox"
-		  					name="checkbox_{{$index}}" id="checkbox_{{$index}}"
-		  					ng-model="test.questions[currentQuestion].answer"
-		  					value="{{option.text}}"
+		  					ng-model="test.questions[currentQuestion].option[$index].answer"
+		  					ng-value="option.text"
 		  				 /> {{option.text}}
 		  			</label>
 		  		</li>

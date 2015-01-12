@@ -20,7 +20,6 @@
       },
       link: function postLink(scope, element, attrs) {
       	scope.currentQuestion = 0;
-      	scope.slide = scope.test.questions[scope.currentQuestion];
       	scope.nextQuestion = nextQuestion;
       	scope.prevQuestion = prevQuestion;
         scope.runCode = runCode;
