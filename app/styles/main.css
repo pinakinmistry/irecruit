@@ -152,7 +152,7 @@ body {
   min-height: 500px;
 }
 
-.btn-prev, .btn-next, .btn-submit {
+.btn-prev, .btn-next, .btn-submit, .evaluation-buttons {
   position: absolute;
   bottom: 20px;
 }
@@ -161,7 +161,7 @@ body {
   right: 20px;
 }
 
-.btn-submit {
+.btn-submit, .evaluation-buttons {
   left: 400px;
 }
 

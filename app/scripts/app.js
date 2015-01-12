@@ -49,6 +49,11 @@ angular
       .state('enterTest.beginTest', {
         url: '/begintest',
         templateUrl: 'scripts/test/begin-test.html'
+      })
+      .state('evaluateTest', {
+        url: '/evaluatetest/:candidateId/:testId',
+        templateUrl: 'scripts/test/evaluate-test.html',
+        controller: 'EvaluateTestCtrl'
       });
       
   })

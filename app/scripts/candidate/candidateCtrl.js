@@ -25,6 +25,7 @@
 		  $scope.tests = Test.all;
 		  $scope.testAssigned = {};
 		  $scope.assignTest = assignTest;
+		  $scope.evaluateTest = evaluateTest;
 
 		  function assignTest() {
 		  	$scope.candidate.testsAssigned.push($scope.testAssigned);
@@ -32,9 +33,13 @@
 		  	var numberOfTests = $scope.candidate.testsAssigned.length;
 		  	$scope.candidate.status = numberOfTests + ' test' + (numberOfTests > 1 ? 's' : '') + ' assigned';
 		  	$scope.testAssigned = {};
-		  	console.log($scope.candidate);
 		  	//$state.go('candidate');
 		  }
+
+		  function evaluateTest(testIndex) {
+		  	$state.go('evaluateTest', { candidateId: $scope.candidate.name, testId: testIndex});
+		  }
+
 		});
 
 })();

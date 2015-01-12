@@ -31,9 +31,11 @@
 		<div ng-if="test.questions[currentQuestion].type === 'Exercise'">
 			<div><b>{{test.questions[currentQuestion].text}}</b></div>
 		  <pre ng-bind-html="test.questions[currentQuestion].content" contenteditable ng-model="test.questions[currentQuestion].content"></pre>
-		  <button class="btn btn-primary btn-sm" ng-click="runCode()">Run</button>
-		  <h5>Output</h5>
-		  <pre ng-bind="codeOutput"></pre>
+		  <div ng-if="test.evaluation">
+			  <button class="btn btn-primary btn-sm" ng-click="runCode()">Run</button>
+			  <h5>Output</h5>
+			  <pre ng-bind="codeOutput"></pre>
+			</div>
 		</div>
 	</div>
 	
@@ -41,9 +43,13 @@
 		ng-disabled="currentQuestion === 0"
 		ng-class="{ 'btn-primary': currentQuestion === test.questions.length - 1 }"
 		ng-click="prevQuestion()">Prev</button>
-	<button class="btn btn-danger btn-submit"
+	<button ng-if="test.started" class="btn btn-danger btn-submit"
 		ng-show="currentQuestion === test.questions.length - 1"
 		ng-click="submitAnswers()">Submit answers</button>
+	<div class="evaluation-buttons" ng-if="test.evaluation">
+		<button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
+		<button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+	</div>
 	<button class="btn btn-primary btn-next"
 		ng-disabled="currentQuestion === test.questions.length - 1"
 		ng-click="nextQuestion()">Next</button>

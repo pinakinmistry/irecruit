@@ -61,18 +61,29 @@
 			}
 
 			function beginTest() {
-				$scope.testStarted = true;
 				$scope.test = _.find($scope.appearingCandidate.testsAssigned, function(test){
 					return test.testkey === $scope.testkey;
 				});
+				$scope.test.started = true;
 				$state.go('enterTest.beginTest');
 			}
 
 			function submitAnswers() {
 				$scope.test.status = 'Answers submitted';
+				$scope.test.started = false;
+				$rootScope.testEntered = false;
 				$state.go('candidate');
 			}
 
+		})
+		.controller('EvaluateTestCtrl', function ($scope, $state, $stateParams, Candidate) {
+			$scope.candidate = _.find(Candidate.all, function(candidate) {
+				return candidate.name === $stateParams.candidateId;
+			});
+			$scope.test = $scope.candidate.testsAssigned[$stateParams.testId];
+			$scope.test.evaluation = true;
+			console.log($scope.test);
+			console.log($scope.candidate);
 
 		});
 
